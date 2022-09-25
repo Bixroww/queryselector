@@ -55,3 +55,19 @@ p{
     z-index: -1;
     /* transition: 0.3s ease; ça fait lag*/ 
 }
+/* NAV BAR */
+nav {
+    background: purple;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    top: -50px;
+    transition: 0.3s;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+}

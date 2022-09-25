@@ -67,8 +67,36 @@ response.addEventListener('mouseover', () => {
 const keypressContainer = document.querySelector(".keypress");
 const key = document.getElementById("key");
 
+// son à chaque activation
+const ring = (key) => {
+    const audio = new Audio();
+    audio.src = key + ".mp3";
+    audio.play();
+};
+// 404 not supported source audio
 document.addEventListener("keypress", (e) =>{
     key.textContent = e.key;
+
+if (e.key === "j") {
+    keypressContainer.style.background = "teal";
+}   else if (e.key === "h") {
+    keypressContainer.style.background = "blue";
+}   else {
+    keypressContainer.style.background = "red";
+}
+
+ring(e.key);
 });
 
-//https://www.youtube.com/watch?v=6q-zt0aQ74U&list=PLEiMYEzpB4QtYf4F6PwW57f971VqUzGhv&index=6
+// nav bar scroll event
+
+const nav = document.querySelector('nav')
+
+window.addEventListener('scroll', () =>{
+    console.log(window.scrollY);
+    if(window.scrollY >  120){
+        nav.style.top = 0;
+    } else  {
+        nav.style.top = "-50px";
+    }
+});
