@@ -67,13 +67,13 @@ response.addEventListener('mouseover', () => {
 const keypressContainer = document.querySelector(".keypress");
 const key = document.getElementById("key");
 
-// son à chaque activation
+// son à chaque activation de la touche Z
 const ring = (key) => {
     const audio = new Audio();
     audio.src = key + ".mp3";
     audio.play();
 };
-// 404 not supported source audio
+
 document.addEventListener("keypress", (e) =>{
     key.textContent = e.key;
 
@@ -84,8 +84,7 @@ if (e.key === "j") {
 }   else {
     keypressContainer.style.background = "red";
 }
-
-ring(e.key);
+    if (e.key === "z") ring(e.key);
 });
 
 // nav bar scroll event
@@ -100,3 +99,54 @@ window.addEventListener('scroll', () =>{
         nav.style.top = "-50px";
     }
 });
+
+// ---------------- Form events
+// récuperer des données dans un input
+
+const inputName = document.querySelector('input[type="text"]');
+const select = document.querySelector("select");
+const form = document.querySelector("form");
+let pseudo ="" ;
+let language = "";
+
+inputName.addEventListener("input", (e) =>{
+    pseudo =e.target.value;
+});
+
+select.addEventListener('input', (e) => {
+    language = (e.target.value);
+});
+// no reset de la page après la validation du form
+form.addEventListener("submit", (e) =>{
+    e.preventDefault();
+    if (cgv.checked) {
+        document.querySelector('form > div').innerHTML =`
+        <h3> Pseudo : ${pseudo} </h3>
+        <h4> Langage préféré : ${language} </h4>
+         `;
+        //affiche le contenu des vairables
+    } else {
+        alert('Veuillez accepter les CGV')
+    }
+});
+
+
+//load event
+window.addEventListener("load", () => {
+    console.log("document chargé");
+});
+//--------------
+
+// plusieurs élément avec la même class
+
+const boxes = document.querySelectorAll(".box");
+console.log(boxes)
+
+boxes.forEach((box) => {
+    box.addEventListener('click', (e) => {
+        // remet à l'échelle au click
+       e.target.style.transform = "scale(0.7)";
+    });
+});
+
+//https://www.youtube.com/watch?v=6q-zt0aQ74U&list=PLEiMYEzpB4QtYf4F6PwW57f971VqUzGhv&index=8 2h:38min
