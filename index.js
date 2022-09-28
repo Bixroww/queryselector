@@ -151,15 +151,17 @@ boxes.forEach((box) => {
 
 //https://www.youtube.com/watch?v=6q-zt0aQ74U&list=PLEiMYEzpB4QtYf4F6PwW57f971VqUzGhv&index=8 2h:38min
 
-
  // fin, on passe à la calculatrice cf dossier calculatrice
 
  //addeventlistener vs onlick
 
- document.body.onclick = () => {
-    console.log("click!");
- };
-
-document.body.onclick = () => {
-    console.log("scroll");
-}
+ //bubbling = fin (de base eventlistener est en mode bubbling)
+ document.body.addEventListener ("click", () => {
+     console.log("click 1! ")
+});
+     
+     
+//use capture(en premier)
+     document.body.addEventListener ("click", () => {
+        console.log("click 2! ")},true
+);
