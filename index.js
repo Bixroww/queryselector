@@ -156,12 +156,12 @@ boxes.forEach((box) => {
  //addeventlistener vs onlick
 
  //bubbling = fin (de base eventlistener est en mode bubbling)
- document.body.addEventListener ("click", () => {
-     console.log("click 1! ")
+document.body.addEventListener ("click", () => {
+    console.log("click 1! ")
 });
      
      
 //use capture(en premier)
-     document.body.addEventListener ("click", () => {
-        console.log("click 2! ")},true
+document.body.addEventListener ("click", () => {
+   console.log("click 2! ")},true
 );
