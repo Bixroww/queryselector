@@ -162,6 +162,54 @@ document.body.addEventListener ("click", () => {
      
      
 //use capture(en premier)
-document.body.addEventListener ("click", () => {
-   console.log("click 2! ")},true
+     document.body.addEventListener ("click", () => {
+        console.log("click 2! ")},true
 );
+
+//------------------------------------
+// stop propagation
+
+questionContainer.addEventListener("click", (e) =>{
+    //alert("test");
+    e.stopPropagation();
+});
+
+//removeEventListener 
+
+//bom
+
+//console.log(window.innerHeight); console.log(window.scrollY); = recup d'info pas besoin d'event
+
+//window.open("https://www.google.fr/", "cours js", "height= 600", "width= 800"); = pop up
+
+//windown.close() = fermeture de la fenetre
+
+//event adossé à window= //windown.alert("hello");
+
+//confirm
+btn2.addEventListener("click", () => { 
+    confirm(" Voulez vous vraiment vous tromper ? ");
+});
+
+
+// prompt
+let answer;
+
+btn1.addEventListener("click", () => { 
+   answer = prompt(" Entrez votre nom ");
+
+    questionContainer.innerHTML += "<h3> C'est bien " + answer  + "</h3>";
+
+});
+
+// timer
+setTimeout(() => {
+    // temps en ms + logique à execute
+    questionContainer.style.borderRadius = "300px"
+}, 1000 );
+
+setInterval(() => {
+    2000
+}, interval);
+
+
