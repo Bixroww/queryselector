@@ -208,8 +208,21 @@ setTimeout(() => {
     questionContainer.style.borderRadius = "300px"
 }, 1000 );
 
-setInterval(() => {
-    2000
-}, interval);
+// let interval = setInterval(() => {
+//     document.body.innerHTML += `
+//     <div class ='box'> 
+//         <h2> Nouvelle boite ! </h2> 
+//     </div> 
+//     `;
+// }, 1000);
+
+// pour supprimer au click
+// document.body.addEventListener("click", (e) => {
+//     e.target.remove()
+//     clearInterval(interval);
+// });
 
 
+btn2.addEventListener("click", () => {
+    location.replace("https://www.youtube.com/watch?v=6q-zt0aQ74U&list=PLEiMYEzpB4QtYf4F6PwW57f971VqUzGhv&index=16" );
+});
